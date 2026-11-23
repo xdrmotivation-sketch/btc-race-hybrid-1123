@@ -86,7 +86,7 @@ def held_qty(state):
 
 
 def close_price(state):
-    bar = state.bars.get(SYMBOL)
+    bar = state.latest.get(SYMBOL)
     if bar is None:
         return None
     return int(bar.get("c") or 0)
